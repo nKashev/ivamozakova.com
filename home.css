@@ -1054,7 +1054,7 @@ align-items: center;
 justify-content: center;
 cursor: pointer;
 transition: background-color 0.3s; /* Added background transition */
-z-index: 49;
+z-index: 19;
 }
 
 /* Media query for desktop version (screen width greater than 768px) */
