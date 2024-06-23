@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>www.ivamozakova.com/home.html</loc>
-        <lastmod>2024-06-22T18:47:10+03:00</lastmod>
+        <lastmod>2024-06-23T16:27:43+03:00</lastmod>
     </url>
     <url>
         <loc>www.ivamozakova.com/en/home.html</loc>
-        <lastmod>2024-06-22T18:47:10+03:00</lastmod>
+        <lastmod>2024-06-23T16:27:43+03:00</lastmod>
     </url>
     <url>
         <loc>www.ivamozakova.com/en/index.html</loc>
-        <lastmod>2024-06-22T18:47:10+03:00</lastmod>
+        <lastmod>2024-06-23T16:27:43+03:00</lastmod>
     </url>
     <url>
         <loc>www.ivamozakova.com/index.html</loc>
-        <lastmod>2024-06-22T18:47:10+03:00</lastmod>
+        <lastmod>2024-06-23T16:27:43+03:00</lastmod>
     </url>
     <url>
         <loc>www.ivamozakova.com/privacypolicy.html</loc>
@@ -25,31 +25,31 @@
         <lastmod>2024-06-22T18:47:29+03:00</lastmod>
     </url>
     <url>
+        <loc>www.ivamozakova.com/blog/blog.html</loc>
+        <lastmod>2024-06-20T16:27:52+03:00</lastmod>
+    </url>
+    <url>
         <loc>www.ivamozakova.com/blog/статия-1.html</loc>
         <lastmod>2024-06-22T02:45:07+03:00</lastmod>
     </url>
     <url>
-        <loc>www.ivamozakova.com/blog/post-1.html</loc>
+        <loc>www.ivamozakova.com/blog/статия-2.html</loc>
         <lastmod>2024-06-21T16:36:23+03:00</lastmod>
     </url>
     <url>
-        <loc>www.ivamozakova.com/blog/post-2.html</loc>
+        <loc>www.ivamozakova.com/blog/статия-3.html</loc>
         <lastmod>2024-06-21T16:36:23+03:00</lastmod>
     </url>
     <url>
-        <loc>www.ivamozakova.com/blog/post-3.html</loc>
+        <loc>www.ivamozakova.com/blog/статия-4.html</loc>
         <lastmod>2024-06-21T16:36:23+03:00</lastmod>
     </url>
     <url>
-        <loc>www.ivamozakova.com/blog/post-4.html</loc>
+        <loc>www.ivamozakova.com/blog/статия-5.html</loc>
         <lastmod>2024-06-21T16:36:23+03:00</lastmod>
     </url>
     <url>
-        <loc>www.ivamozakova.com/blog/post-5.html</loc>
+        <loc>www.ivamozakova.com/blog/статия-6.html</loc>
         <lastmod>2024-06-21T16:36:23+03:00</lastmod>
-    </url>
-    <url>
-        <loc>www.ivamozakova.com/blog/blog.html</loc>
-        <lastmod>2024-06-22T18:48:15+03:00</lastmod>
     </url>
 </urlset>
