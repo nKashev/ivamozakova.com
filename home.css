@@ -981,3 +981,111 @@
 }.u-section-8 .u-sheet-1 {
   min-height: 12px;
 }
+
+/* Styling for the fixed buttons */
+.fixed-buttons {
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 49;
+}
+		
+/* Styling for the chat buttons container */
+.chat-buttons-container {
+position: fixed;
+bottom: 60px; /* Adjust the position as needed */
+right: 5px; /* Adjust the position as needed */
+display: none;
+flex-direction: column-reverse; /* Align chat buttons above the activator button */
+align-items: flex-end; /* Align buttons to the right */
+gap: 10px;
+}
+		
+/* Styling for the chat buttons */
+.chat-button {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: background-color 0.3s; /* Added background transition */
+}
+		
+/* Styling for chat button icons */
+.chat-button svg {
+width: 100%;
+height: 100%;
+fill: #ffffff;
+stroke: none;
+}
+		
+/* Styling for the active chat buttons */
+.chat-button.active {
+background-color: #007bff; /* Characterized color for active buttons */
+border: 1px solid #000; /* Black border for active buttons */
+}
+		
+/* Styling for the chat button labels */
+.chat-label {
+position: absolute;
+right: 55px; /* Position label to the right of the activator button */
+<!-- margin-top: 5px; /* Adjust the margin as needed */ -->
+<!-- text-align: right; -->
+text-align: left;
+font-size: 12px;
+color: #808080;
+background: #F0F0F0;
+}
+		
+/* Styling for the floating activator button */
+.chat-activator {
+position: fixed;
+bottom: 5px;
+right: 5px;
+width: 50px;
+height: 50px;
+background-color: #237b7b; /* Green background color */
+border-radius: 50%;
+border: 0.5px solid white;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: background-color 0.3s; /* Added background transition */
+z-index: 49;
+}
+
+/* Media query for desktop version (screen width greater than 768px) */
+@media (min-width: 769px) {
+/* Hide all chat buttons except Messenger */
+.chat-button:not(#chat-button-4) {
+display: none !important;
+}
+/* [id^="st-el-"] .st-btn[data-network="messenger"] { */
+/* background: linear-gradient(39.47deg,#09f 6.82%,#a033ff 48.51%,#ff5280 75.25%,#ff7061 87.06%) !important; */
+/* } */
+}
+		
+/* Media query for mobile devices (screen width less than 768px) */
+	@media (max-width: 768px) {
+/* Adjust the position of activator and chat buttons for mobile */
+.chat-activator {
+	bottom: 10px;
+	<!-- bottom: 40px; -->
+	right: 10px;
+	border: 1px solid white;
+	/* z-index: 49; */
+}
+		
+.chat-buttons-container {
+	bottom: 70px; /* Adjust the position as needed for mobile */
+	<!-- bottom: 100px; -->
+	right: 10px;
+	/* z-index: 49; */
+}
+	/* [id^="st-el-"] .st-btn[data-network="messenger"] { */
+	/* background: linear-gradient(39.47deg,#09f 6.82%,#a033ff 48.51%,#ff5280 75.25%,#ff7061 87.06%) !important; */
+	/* } */
+}
