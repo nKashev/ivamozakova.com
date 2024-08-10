@@ -1,5 +1,5 @@
-# Сайт на психолога Ива Мозакова
-Статичен сайт разписан на HTML/CSS/JS използвайки готова CSS библиотека.
-Все още е в процес на разработка.
+# Website of the psychologist Iva Mozakova
+Static website written in HTML/CSS/JS using ready CSS library.
+Still under development.
 
- [![Open Site](https://img.shields.io/badge/Отвори-Сайта-brightgreen?style=for-the-badge)](https://nkashev.github.io/ivamozakova.com/)
+ [![Open Site](https://img.shields.io/badge/Open-Website-brightgreen?style=for-the-badge)](https://nkashev.github.io/ivamozakova.com/)
