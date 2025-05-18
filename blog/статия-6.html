@@ -4,9 +4,61 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Post 1 Headline">
     <meta name="description" content="Страница на Ива Мозакова, психолог от град Пловдив.">
-    <title>Статия 6 Заглавие</title>
+    <title>Видео плеър</title>
+
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <link href="https://unpkg.com/@videojs/themes@1/dist/city/index.css" rel="stylesheet" />
+    
+    <!-- <style>
+      #video-container { width: 720px; margin: 20px auto; }
+    </style> -->
+
+    <style>
+      #playlist-ui {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .playlist-item {
+        display: flex;
+        margin-bottom: 10px;
+        cursor: pointer;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: background 0.2s;
+        background: transparent; /* без рамка/фон */
+      }
+    
+      .playlist-item:hover {
+        background: #f0f0f0;
+      }
+    
+      .playlist-thumb {
+        width: 100px;
+        height: 56px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+    
+      .playlist-info {
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+      }
+    
+      .playlist-title {
+        text-align: left;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+      }
+    </style>
+
+    <!-- Video.js CSS -->
+
     <link rel="stylesheet" href="../nicepage.css" media="screen">
-<link rel="stylesheet" href="../Post-Template.css" media="screen">
+    <link rel="stylesheet" href="../Post-Template.css" media="screen">
     <script class="u-script" type="text/javascript" src="../jquery-1.9.1.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../nicepage.js" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -87,23 +139,128 @@
           </div>
         </nav>
       </div></header>
-    <section class="u-align-center u-clearfix u-section-1" id="sec-d4c8">
+    
+      <section class="u-align-center u-clearfix u-section-1" id="sec-d4c8">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1"><!--post_details--><!--post_details_options_json--><!--{"source":""}--><!--/post_details_options_json--><!--blog_post-->
         <div class="u-container-style u-expanded-width u-post-details u-post-details-1">
           <div class="u-container-layout u-valign-middle u-container-layout-1"><!--blog_post_image-->
-            <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="../images/68f64b9d.jpeg"><!--/blog_post_image--><!--blog_post_header-->
-            <h2 class="u-blog-control u-text u-text-1">Статия 6</h2><!--/blog_post_header--><!--blog_post_metadata-->
+            <!-- <img alt="my_videoplayer_image" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="../images/68f64b9d.jpeg"> -->
+            <!--/blog_post_image--><!--blog_post_header-->
+            
+            <h2 class="u-blog-control u-text u-text-1">Видео плейлист</h2> <!--/blog_post_header--><!--blog_post_metadata-->
+            
             <div class="u-blog-control u-metadata u-metadata-1"><!--blog_post_metadata_date-->
-              <span class="u-meta-date u-meta-icon">21.06.2024</span><!--/blog_post_metadata_date--><!--blog_post_metadata_category-->
+              <span class="u-meta-date u-meta-icon">18.05.2025</span><!--/blog_post_metadata_date--><!--blog_post_metadata_category-->
               <!--/blog_post_metadata_category--><!--blog_post_metadata_comments-->
               <!--/blog_post_metadata_comments-->
             </div><!--/blog_post_metadata--><!--blog_post_content-->
-            <div class="u-align-justify u-blog-control u-post-content u-text u-text-2 fr-view"><p>Това е тестова статия, за да проверим как изглежда в сайта.</p></div><!--/blog_post_content-->
+            <div id="video-container" class="u-align-justify u-blog-control u-post-content u-text u-text-2 fr-view"><p>Това е тестов видеоплеър с плейлист, за да проверим как изглежда в сайта.</p>
+            <div style="display: flex; gap: 20px;">
+              <div id="video-container" style="flex: 2;">
+            
+              <video
+                id="my-player"
+                class="video-js vjs-theme-city"
+                controls
+                preload="auto"
+                width="720"
+                height="405"
+                poster="../images/68f64b9d.jpeg">
+              </video>
+
+              <!-- Плейлист бутони -->
+              <!-- <ul id="playlist" style="list-style: none; padding: 0; margin-top: 10px;">
+                <li><button onclick="player.playlist.currentItem(0)">▶ Core Workout (локален)</button></li>
+                <li><button onclick="player.playlist.currentItem(1)">▶ YouTube клип</button></li>
+              </ul> -->
+
+            </div><!--/blog_post_content-->
+            <div id="playlist-ui" style="flex: 1;"></div>
+          </div>
           </div>
         </div><!--/blog_post--><!--/post_details-->
       </div>
     </section>
+
+    <!-- video.js scripts -->
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <script src="https://unpkg.com/videojs-playlist/dist/videojs-playlist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/videojs-youtube@2.6.1/dist/Youtube.min.js"></script>
+
+    <!-- <script>
+      const player = videojs('my-player');
+  
+      player.playlist([
+        {
+          name: 'Тренировка за ядро (локален)',
+          description: 'Локален MP4 файл',
+          sources: [{
+            src: '../video/Core_workout.mp4',
+            type: 'video/mp4'
+          }],
+          poster: '../images/68f64b9d.jpeg'
+        },
+        {
+          name: 'YouTube клип',
+          description: 'Примерно YouTube видео',
+          sources: [{
+            src: 'https://www.youtube.com/watch?v=EZW5mczNtnY&list=PL7OcKV7yggM-6hIK7yxof_osy6Tk7ipkq&index=5',
+            type: 'video/youtube'
+          }],
+          poster: 'https://img.youtube.com/vi/EZW5mczNtnY/0.jpg'
+        }
+      ]);
+  
+      player.playlist.autoadvance(0);
+    </script> -->
+
+    <script>
+      const player = videojs('my-player');
     
+      const playlist = [
+        {
+          name: 'Тренировка за ядро',
+          description: 'Локален MP4 файл',
+          sources: [{
+            src: 'https://youtu.be/watch?v=uZQOMyapmFM&modestbranding=1&rel=0&controls=1',
+            type: 'video/youtube'
+          }],
+          poster: 'https://img.youtube.com/vi/uZQOMyapmFM/0.jpg',
+          thumbnail: 'https://img.youtube.com/vi/uZQOMyapmFM/1.jpg'
+        },
+        {
+          name: 'YouTube клип',
+          description: 'Примерно YouTube видео',
+          sources: [{
+            src: 'https://www.youtube.com/watch?v=EZW5mczNtnY&modestbranding=1&rel=0&controls=1',
+            type: 'video/youtube'
+          }],
+          poster: 'https://img.youtube.com/vi/EZW5mczNtnY/0.jpg',
+          thumbnail: 'https://img.youtube.com/vi/EZW5mczNtnY/1.jpg'
+        }
+      ];
+    
+      player.playlist(playlist);
+      player.playlist.autoadvance(0);
+    
+      const uiContainer = document.getElementById('playlist-ui');
+      playlist.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'playlist-item';
+        div.onclick = () => player.playlist.currentItem(index);
+    
+        div.innerHTML = `
+          <img src="${item.thumbnail}" class="playlist-thumb" />
+          <div class="playlist-info">
+            <p class="playlist-title">${item.name}</p>
+          </div>
+        `;
+        uiContainer.appendChild(div);
+      });
+    </script>
+        
+    <!-- video.js scripts -->
+
     <footer class="foot u-align-center u-clearfix u-footer u-palette-1-base u-footer" id="sec-foot"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
         <p class="u-small-text u-text u-text-default-lg u-text-default-xl u-text-variant u-text-1" data-lang-en="© 2023 by Iva Mozakova" data-lang-bg="© 2023 by Iva Mozakova">© 2023 by Iva Mozakova</p>
       </div></footer><section class="u-align-center u-clearfix u-cookies-consent u-grey-80 u-cookies-consent" id="sec-9533">

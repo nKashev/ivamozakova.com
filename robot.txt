@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /video/
+Disallow: /images/
+Disallow: /intlTelInput/
+Allow: /
+
+Sitemap: /sitemap.xml
