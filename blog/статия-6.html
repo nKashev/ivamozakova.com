@@ -15,30 +15,61 @@
     </style> -->
 
     <style>
-      /* Контейнер за плейлиста */
+      .video-section {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    
+      .video-intro {
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+    
+      #player-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+    
+      .video-container {
+        flex: 2;
+        min-width: 300px;
+      }
+    
+      #my-player {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        max-width: 720px;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+    
       #playlist-ui {
+        flex: 1;
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding: 0;
+        min-width: 240px;
       }
     
-      /* Всеки елемент от списъка */
       .playlist-item {
         display: flex;
         align-items: center;
         cursor: pointer;
         border-radius: 8px;
-        overflow: hidden;
-        background: transparent;
-        transition: background 0.2s ease;
+        padding: 5px;
+        transition: background 0.2s;
       }
     
       .playlist-item:hover {
-        background-color: #f0f0f0;
+        background: #f0f0f0;
       }
     
-      /* Миниатюра */
       .playlist-thumb {
         width: 100px;
         height: 56px;
@@ -47,26 +78,27 @@
         flex-shrink: 0;
       }
     
-      /* Инфо секцията */
       .playlist-info {
         padding-left: 10px;
-        display: flex;
-        align-items: center;
         flex: 1;
       }
     
       .playlist-title {
-        margin: 0;
         font-size: 14px;
         font-weight: 500;
+        margin: 0;
         text-align: left;
         word-break: break-word;
       }
     
-      /* Mobile адаптация */
       @media (max-width: 768px) {
+        #player-wrapper {
+          flex-direction: column;
+        }
+    
         #playlist-ui {
-          margin-top: 20px;
+          width: 100%;
+          flex-direction: column;
         }
     
         .playlist-item {
@@ -74,8 +106,8 @@
         }
     
         .playlist-thumb {
-          width: 80px;
-          height: 45px;
+          width: 90px;
+          height: 50px;
         }
     
         .playlist-title {
@@ -83,7 +115,7 @@
         }
       }
     </style>
-        
+            
     <!-- Video.js CSS -->
 
     <link rel="stylesheet" href="../nicepage.css" media="screen">
@@ -183,30 +215,25 @@
               <!--/blog_post_metadata_category--><!--blog_post_metadata_comments-->
               <!--/blog_post_metadata_comments-->
             </div><!--/blog_post_metadata--><!--blog_post_content-->
-            <div class="u-align-justify u-blog-control u-post-content u-text u-text-2 fr-view"><p>Това е тестов видеоплеър с плейлист, за да проверим как изглежда в сайта.</p>
-            <div style="display: flex; gap: 20px;">
-              <div id="video-container" style="flex: 2;">
+            <!-- <div class="u-align-justify u-blog-control u-post-content u-text u-text-2 fr-view"><p>Това е тестов видеоплеър с плейлист, за да проверим как изглежда в сайта.</p></div> -->
+            <div class="video-section">
+              <p class="video-intro">Това е тестов видеоплеър с плейлист, за да проверим как изглежда в сайта.</p>
             
-              <video
-                id="my-player"
-                class="video-js vjs-theme-city"
-                controls
-                preload="auto"
-                width="720"
-                height="405"
-                poster="../images/68f64b9d.jpeg">
-              </video>
-
-              <!-- Плейлист бутони -->
-              <!-- <ul id="playlist" style="list-style: none; padding: 0; margin-top: 10px;">
-                <li><button onclick="player.playlist.currentItem(0)">▶ Core Workout (локален)</button></li>
-                <li><button onclick="player.playlist.currentItem(1)">▶ YouTube клип</button></li>
-              </ul> -->
-
-            </div><!--/blog_post_content-->
-            <div id="playlist-ui" style="flex: 1;"></div>
-          </div>
-          </div>
+              <div id="player-wrapper">
+                <div class="video-container">
+                  <video
+                    id="my-player"
+                    class="video-js vjs-theme-city"
+                    controls
+                    preload="auto"
+                    poster="../images/68f64b9d.jpeg"
+                  ></video>
+                </div>
+            
+                <div id="playlist-ui"></div>
+              </div>
+            </div>
+              
         </div><!--/blog_post--><!--/post_details-->
       </div>
     </section>
