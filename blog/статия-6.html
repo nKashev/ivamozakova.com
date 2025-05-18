@@ -15,46 +15,75 @@
     </style> -->
 
     <style>
+      /* Контейнер за плейлиста */
       #playlist-ui {
         display: flex;
         flex-direction: column;
+        gap: 10px;
+        padding: 0;
       }
     
+      /* Всеки елемент от списъка */
       .playlist-item {
         display: flex;
-        margin-bottom: 10px;
+        align-items: center;
         cursor: pointer;
         border-radius: 8px;
         overflow: hidden;
-        transition: background 0.2s;
-        background: transparent; /* без рамка/фон */
+        background: transparent;
+        transition: background 0.2s ease;
       }
     
       .playlist-item:hover {
-        background: #f0f0f0;
+        background-color: #f0f0f0;
       }
     
+      /* Миниатюра */
       .playlist-thumb {
         width: 100px;
         height: 56px;
         object-fit: cover;
         border-radius: 6px;
+        flex-shrink: 0;
       }
     
+      /* Инфо секцията */
       .playlist-info {
-        padding: 0 10px;
+        padding-left: 10px;
         display: flex;
         align-items: center;
+        flex: 1;
       }
     
       .playlist-title {
-        text-align: left;
+        margin: 0;
         font-size: 14px;
         font-weight: 500;
-        margin: 0;
+        text-align: left;
+        word-break: break-word;
+      }
+    
+      /* Mobile адаптация */
+      @media (max-width: 768px) {
+        #playlist-ui {
+          margin-top: 20px;
+        }
+    
+        .playlist-item {
+          flex-direction: row;
+        }
+    
+        .playlist-thumb {
+          width: 80px;
+          height: 45px;
+        }
+    
+        .playlist-title {
+          font-size: 13px;
+        }
       }
     </style>
-
+        
     <!-- Video.js CSS -->
 
     <link rel="stylesheet" href="../nicepage.css" media="screen">
@@ -154,7 +183,7 @@
               <!--/blog_post_metadata_category--><!--blog_post_metadata_comments-->
               <!--/blog_post_metadata_comments-->
             </div><!--/blog_post_metadata--><!--blog_post_content-->
-            <div id="video-container" class="u-align-justify u-blog-control u-post-content u-text u-text-2 fr-view"><p>Това е тестов видеоплеър с плейлист, за да проверим как изглежда в сайта.</p>
+            <div class="u-align-justify u-blog-control u-post-content u-text u-text-2 fr-view"><p>Това е тестов видеоплеър с плейлист, за да проверим как изглежда в сайта.</p>
             <div style="display: flex; gap: 20px;">
               <div id="video-container" style="flex: 2;">
             
